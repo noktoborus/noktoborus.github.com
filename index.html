@@ -1,0 +1,18 @@
+---
+title: Hello
+layout: default
+---
+
+<div id="body_start">
+	<span>Posts: {{ site.posts | size }}</span>
+	<ul class="posts">
+		{% for post in site.posts %}
+		<li>
+			<span class="date">{{ post.date | date_to_string }}</span>
+			&#22d9;
+			<a href="{{ post.url }}">{{ post.title }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+
