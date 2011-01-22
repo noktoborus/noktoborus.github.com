@@ -1,5 +1,5 @@
 ---
-title: Hello
+title: Index
 layout: default
 ---
 
@@ -9,10 +9,10 @@ layout: default
 		{% for post in site.posts %}
 		<li>
 			<span class="date">{{ post.date | date_to_string }}</span>
-			&#22d9;
 			<a href="{{ post.url }}">{{ post.title }}</a>
 		</li>
 		{% endfor %}
 	</ul>
 </div>
 
+<a href="/atom.xml">rss</a>
