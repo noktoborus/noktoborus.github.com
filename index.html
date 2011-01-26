@@ -6,8 +6,10 @@ layout: default
 {% for post in site.posts %}
 			<div id="posts">
 				<div class="post_line">
-					<span class="date">{{ post.date | date_to_string }}</span>
-					<a href="{{ post.url }}">{{ post.title }}</a>
+					<a href="{{ post.url }}">
+						<span class="date">{{ post.date | date_to_string }}</span>
+						<span class="title">{{ post.title }}</title>
+					</a>
 				</div>
 			</div>
 {% endfor %}

@@ -1,11 +1,14 @@
 ---
 layout: default
 ---
-<div id="body_post_head">
-	<span>{{ page.date | date: "%d/%m/%Y" }}</span>
-	<h3>{{ page.title }}</h3>
+<!-- ! -->
+<!-- post -->
+<div id="post_head">
+	<span class="date">{{ page.date | date: "%d/%m/%Y" }}</span>
+	<span class="title">{{ page.title }}</span>
 </div>
-<div id="body_post_body">
+<div id="post_body">
 	{{ content }}
 </div>
+<!-- /post -->
 

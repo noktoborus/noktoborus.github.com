@@ -8,54 +8,93 @@
 		<title>~*: {{ page.title }}</title>
 		<style>
 			body {
-				background: #07000f;
+				background: #232413;
 				color: yellow;
 			}
+			#head, #body, #foot {
+				position: relative;
+				width: 95%;
+				margin: 0 auto;
+				border: 1px solid #1b160a;
+				border-bottom: 0px;
+				overflow: hidden;
+			}
+			#head, #foot {
+				text-align: center;
+			}
+			#head a, #foot a {
+				display: block;
+				text-align: center;
+				text-decoration: none;
+			}
+			#head a {
+				color: #aeb9cf;
+				font-size: 20px;
+				border: 1px solid #29291a;
+				height: 33px;
+				position: relative;
+				top: -16px;
+			}
+			#head a:hover {
+				border: 1px solid gray;
+				border-top: 1px solid #29291a;
+			}
+			#foot a {
+				color: #2f435f;
+				font-size: 12px;
+			}
+			#head {
+				background-color: #29291a;
+				height: 35px;
+			}
+			#head_text {
+				color: #717158;
+				font-size: 14px;
+				height: 16px;
+				position: relative;
+				top: 14px;
+				left: 75px;
+			}
 			#body {
-				width: 90%;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				padding-left: 5px;
 				padding-right: 5px;
-				margin: 0 auto;
-				background: #000c12;
+				background: #302e2b;
+				border-bottom: 1px solid #1b160a;
 			}	
-			#body_foot {
-				height: 10px;
+			#foot {
+				border-top: 0px;
 			}
 			#posts {
-				border-bottom: 1px solid #000000;
 			}
 			#posts .post_line .date {
 				font-size: 10px;
-				color: #003f9d;
+				padding-left: 7px;
+				color: #527b91;
+				font-weight: bold;
+				display: block;
 			}
 			#posts .post_line a {
 				border-left: 1px solid #000000;
-				padding-left: 7px;
 				text-decoration: none;
 				font-size: 14px;
-				color: #d69e26;
-				background: #000f17;
-				width: 99%;
 				display: block;
 			}
-			#posts .post_line a:hover {
+			#posts .post_line a:hover .title {
 				color: #ffffff;
 				background: #002b42;
+			}
+			#posts .post_line a .title {
+				display: block;
+				color: #d69e26;
+				background: #000f17;
+				padding-left: 7px;
 			}
 			#posts .post_line a:active {
 				color: #ffce00;
 			}
-			#foot {
-				margin: 0 auto;
-				text-align: center;
-			}
-			#foot a {
-				font-size: 12px;
-				text-decoration: none;
-				color: #2f435f; 
-			}
+			/*
 			#sideframe0 {
 				padding-left: 3px;
 				width: 34px;
@@ -68,7 +107,7 @@
 			#sideframe0 .key {
 				text-align: center;
 				vertical-align: middle;
-				width 34px;
+				width: 34px;
 				height: 34px;
 				overflow: hidden;
 				padding-bottom: 5px;
@@ -88,6 +127,33 @@
 				padding-top: 0px;
 				left: 37px;
 				background: red;
+			}
+			*/
+			#post_head .date, #post_head .title {
+				display: block;
+			}
+			#post_head .date {
+				margin-top: 2px;
+				text-align: center;
+				width: 90px;
+				font-size: 12px;
+				font-weight: bold;
+				color: #7e7d6d;
+				float: left;
+			}
+			#post_head .title {
+				font-size: 20px;
+				color: #c0a149;
+				border-top: 1px solid #352d14;
+			}
+			#post_body {
+				border-top: 1px solid #000;
+				color: #000000;
+				background: #ffffff;
+				padding-top: 1px;
+				padding-left: 3px;
+				padding-right: 3px;
+				padding-bottom: 1px;
 			}
 		</style>
 	</head>
@@ -113,9 +179,11 @@
 		</div>
 		-->
 		<div id="head">
+			<div id="head_text">Крен на Лориен!</div>
+			<a href="/" >~*</a>
 		</div>
 		<div id="body" class="body">
-		{{ content }}
+			{{ content }}
 		</div>
 		<div id="foot">
 			<a href="/atom.xml">rss</a>
