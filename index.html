@@ -8,7 +8,10 @@ layout: default
 				<div class="post_line">
 					<a href="{{ post.url }}">
 						<span class="date">{{ post.date | date_to_string }}</span>
-						<span class="title">{{ post.title }}</title>
+						<span class="title">{{ post.title }}</span>
+						{% if post.description %}
+						<span class="descr">{{ post.description }}</span>
+						{% endif %}
 					</a>
 				</div>
 			</div>

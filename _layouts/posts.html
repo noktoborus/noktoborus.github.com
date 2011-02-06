@@ -3,12 +3,15 @@ layout: default
 ---
 <!-- ! -->
 <!-- post -->
-<div id="post_head">
-	<span class="date">{{ page.date | date: "%d/%m/%Y" }}</span>
-	<span class="title">{{ page.title }}</span>
-</div>
-<div id="post_body">
-	{{ content }}
+<div id="post_wrap0">
+	<div id="post_head">
+		<span class="date">{{ page.date | date: "%d/%m/%Y" }}</span>
+		<span class="title">{{ page.title }}</span>
+		<span class="descr">{{ page.description }}</span>
+	</div>
+	<div id="post_body">
+		{{ content }}
+	</div>
 </div>
 <!-- /post -->
 
