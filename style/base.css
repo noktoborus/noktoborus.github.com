@@ -130,13 +130,19 @@ body {
 	background: red;
 }
 */
-#post_head .date, #post_head .title, #post_head .descr {
+
+#post_head .date, #post_head .title, #post_head .descr
+{
 	display: block;
 }
-#post_wrap0 {
+
+#post_wrap0
+{
 	border-left: 1px solid #000000;
 }
-#post_head .date {
+
+#post_head .date
+{
 	margin-top: 2px;
 	text-align: center;
 	width: 90px;
@@ -145,29 +151,96 @@ body {
 	color: #7e7d6d;
 	float: left;
 }
-#post_head .title {
+
+#post_head .title
+{
 	font-size: 20px;
 	color: #c0a149;
 }
-#post_head .descr {
+
+#post_head .descr
+{
 	color: #c09d3b;
 	padding-left: 20px;
 	padding-bottom: 4px;
 }
-#post_body {
+
+#post_body
+{
 	border-top: 1px solid #000;
-	color: #000000;
-	background: #ffffff;
+	color: #b7b7c6;
+	background: #090911;
 	padding-top: 1px;
 	padding-left: 10px;
 	padding-right: 10px;
 	padding-bottom: 1px;
 }
-#post_body p {
+
+#post_body p
+{
 	text-align: justify;
 }
-#post_body p:first-letter {
+
+#post_body p:first-letter
+{
 	font-weight: bold;
 	font-size: 130%;
+}
+
+#post_body p code
+{
+	padding-left: 3px; 
+	padding-right: 3px;
+	background: #0d0d17;
+}
+
+#post_body p a
+{
+	padding-left: 3px;
+	padding-right: 3px;
+	color: #b7b78c;
+	text-decoration: none;
+}
+
+#post_body p a:hover
+{
+	color: #c8ca3e;
+	background: #5e5e50;
+}
+
+#post_body table
+{
+	padding: 0px;
+}
+
+#post_body table th
+{
+	color: #aeaf47;
+	background: #21213b;
+	padding: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+#post_body table td
+{
+	background: #10101d;
+	padding: 5px;
+	text-align: justify;
+	vertical-align: top;
+}
+
+#post_body .footnote a
+{
+	color: #6a670c;
+	text-decoration: none;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#post_body .footnote a:hover
+{
+	color: #e9153f;
+	background: #ab8f6b;
 }
 
