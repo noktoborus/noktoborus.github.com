@@ -187,14 +187,14 @@ body {
 	font-size: 130%;
 }
 
-#post_body p code
+#post_body code
 {
 	padding-left: 3px; 
 	padding-right: 3px;
 	background: #0d0d17;
 }
 
-#post_body p a
+#post_body a
 {
 	padding-left: 3px;
 	padding-right: 3px;
@@ -202,7 +202,7 @@ body {
 	text-decoration: none;
 }
 
-#post_body p a:hover
+#post_body a:hover
 {
 	color: #c8ca3e;
 	background: #5e5e50;
