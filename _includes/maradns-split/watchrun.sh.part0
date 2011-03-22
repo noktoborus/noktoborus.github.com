@@ -1,0 +1,4 @@
+done <<!
+/usr/bin/maradns -f ./output/mararc.internal|./output/mararc.internal ./output/db/db.samplehost.internal
+/usr/bin/maradns -f ./output/mararc.external|./output/mararc.external ./output/db/db.samplehost.external
+!
