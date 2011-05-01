@@ -2,7 +2,7 @@ body {
 	background: #232413;
 	color: yellow;
 }
-#head, #body, #foot, #body_head {
+#head, #body, #foot, #body_head, #body_body {
 	position: relative;
 	width: 95%;
 	margin: 0 auto;
@@ -72,6 +72,13 @@ body {
 	text-decoration: none;
 	color: #3361a0;
 	font-size: 12px;
+}
+#body_body {
+	position: relative;
+	background-color: #363636;
+	width: 100%;
+	border-left-width: 0px;
+	border-bottom-width: 1px;
 }
 #foot {
 	border-top: 0px;
