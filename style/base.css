@@ -204,23 +204,24 @@ body {
 
 #post_body p
 {
+	text-indent: 25px;
 	text-align: justify;
 }
 
-#post_body p:first-letter
-{
-	font-weight: bold;
-	font-size: 130%;
-}
-
-/*
-#post_body code
+p code, td code, ul code
 {
 	padding-left: 3px; 
 	padding-right: 3px;
 	background: #0d0d17;
+	color: #7c7c4b;
 }
-*/
+
+th code
+{
+	padding-left: 3px;
+	padding-right: 3px;
+	color: #7c7c4b;
+}
 
 #post_body a
 {
