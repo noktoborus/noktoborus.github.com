@@ -9,6 +9,23 @@
 		<title>~*: {{ page.title }}</title>
 		<link rel="stylesheet" type="text/css" href="{{ site.url }}/style/highling.css" />
 		<link rel="stylesheet" type="text/css" href="{{ site.url }}/style/base.css" />
+		<link href="http://otto.styxheim.ru/atom.xml" rel="alternate" title="Main rss" type="application/atom+xml" />
+		<!-- disqus code -->
+		<script type="text/javascript">
+			// disqus comment system
+			var disqus_shortname = 'irmo';
+			var disqus_developer = 1;
+			// var disqus_identifier = '';
+			var disqus_url = 'http://otto.styxheim.ru{{ page.url }}';
+			(function () {
+				var dsq = document.createElement('script');
+				dsq.type = 'text/javascript';
+				dsq.async = true;
+				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(dsq);
+			}());
+		</script>
+		<!-- /disqus code -->
 	</head>
 	<body>
 		<!--
