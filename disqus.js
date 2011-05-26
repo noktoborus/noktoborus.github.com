@@ -2,7 +2,7 @@
 var disqus_shortname = 'irmo';
 var disqus_developer = 1;
 // var disqus_identifier = '';
-var disqus_url = 'http://otto.styxheim.ru{{ page.url }}';
+// var disqus_url = 'http://otto.styxheim.ru{{ page.url }}';
 (function () {
 	var dsq = document.createElement('script');
 	dsq.type = 'text/javascript';
