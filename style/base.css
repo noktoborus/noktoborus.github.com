@@ -94,6 +94,9 @@ body {
 #body_body #disqus_thread #dsq-pagination #dsq-footer {
 	display: none;
 }
+#dsq-account-dropdown {
+	display: none;
+}
 #body_body #disqus_thread #dsq-pagination .dsq-more-button {
 	width: 80%;
 	margin-left: auto;
