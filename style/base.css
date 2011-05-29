@@ -295,3 +295,15 @@ th code
 	background: #ab8f6b;
 }
 
+#post_body .ihead
+{
+	color: #8a8723;
+	margin-bottom: -1em;
+}
+
+#post_body .ibody
+{
+	padding-top: 3px;
+	padding-left: 2em;
+}
+
