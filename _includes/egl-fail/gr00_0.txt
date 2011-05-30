@@ -1,0 +1,2 @@
+EGL Init version: 1.4
+EGL Version: 1.4 (Gallium)

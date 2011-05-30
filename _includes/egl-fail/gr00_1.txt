@@ -1,0 +1,11 @@
+libEGL debug: EGL search path is /usr/lib/egl
+libEGL debug: added /usr/lib/egl/egl_gallium.so to module array
+libEGL debug: added /usr/lib/egl/egl_dri2.so to module array
+libEGL debug: added /usr/lib/egl/egl_glx.so to module array
+libEGL debug: dlopen(/usr/lib/egl/egl_gallium.so)
+libEGL info: use DRM for display (nil)
+libEGL debug: searching for pipe module i915
+libEGL debug: loaded /usr/lib/egl/pipe_i915.so
+libEGL debug: the best driver is Gallium (score 100)
+EGL Init version: 1.4
+EGL Version: 1.4 (Gallium)
