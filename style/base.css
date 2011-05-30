@@ -281,6 +281,11 @@ th code
 	vertical-align: top;
 }
 
+#post_body .footnote
+{
+	padding-left:  2em;
+}
+
 #post_body .footnote a
 {
 	color: #6a670c;
