@@ -281,7 +281,7 @@ th code
 	vertical-align: top;
 }
 
-#post_body .footnote
+#post_body p.footnote
 {
 	padding-left:  2em;
 }
