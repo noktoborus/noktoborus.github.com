@@ -14,11 +14,11 @@ body {
 	text-align: center;
 }
 #head a, #foot a {
-	display: block;
 	text-align: center;
 	text-decoration: none;
 }
 #head a {
+	display: block;
 	color: #aeb9cf;
 	font-size: 20px;
 	border: 1px solid #29291a;
@@ -32,7 +32,6 @@ body {
 }
 #foot a {
 	color: #2f435f;
-	font-size: 12px;
 }
 #head {
 	background-color: #29291a;
@@ -103,7 +102,12 @@ body {
 	margin-right: auto;
 }
 #foot {
+	color: #28343e;
 	border-top: 0px;
+	font-size: 12px;
+}
+#foot:hover {
+	color: #334552;
 }
 #posts {
 }
