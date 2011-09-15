@@ -39,7 +39,7 @@ macro index , <tag-prefix-cond><save-message>~/tagged.mbox<enter> "Save tagged m
 
 Теперь он умеет, при нажатии кнопки ",", сохранять все помеченные письма в @~/tagged.mbox@. Письма можно пометить клавишей "t". Теперь требуется перейти в каталог с репозитарием и применить патчи с помощью @git am ~/tagged.mbox@.
 
-h3(#git-am). phpmyadmin и ssh
+h3(#phpmysqladmin-sshtunnel). phpmyadmin и ssh
 
 Неожиданно потребовалось странное - нормальный, привычный, клиент для mysql, который бы умел подключаться к UDS(Unix Domain Socket) через ssh-тунель, из всего подручного и умеющего оказался только mysql-workbench, но он жутко падучий, да и вообще, как-то хреново организован. В общем, не долго думая, остановился на phpmyadmin, но, т.к. он не умеет ssh-тунели, пришлось написать маленького даймона (искать альтернативы было лень).
 
@@ -59,7 +59,7 @@ h3(#git-am). phpmyadmin и ssh
 
 В моём случае, ssh подключается (при надобности) к sshd, запускает netcat (обязательно netcat6, который умеет опцию -U (использовать UDS)) и обменивается по stdin/stdout трафиком. Ключ @/home/noktoborus/.ssh/id_rsa.1@ необходим для авторизации на sshd, и конфигурация @/home/noktoborus/.ssh/config_mysql@ содержит опции, чтобы не сильно задерживать систему.
 
-{% highlight cfg %}
+{% highlight txt %}
 # file: config_mysql
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
