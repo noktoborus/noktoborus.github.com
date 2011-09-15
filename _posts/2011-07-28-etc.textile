@@ -59,7 +59,7 @@ h3(#phpmysqladmin-sshtunnel). phpmyadmin и ssh
 
 В моём случае, ssh подключается (при надобности) к sshd, запускает netcat (обязательно netcat6, который умеет опцию -U (использовать UDS)) и обменивается по stdin/stdout трафиком. Ключ @/home/noktoborus/.ssh/id_rsa.1@ необходим для авторизации на sshd, и конфигурация @/home/noktoborus/.ssh/config_mysql@ содержит опции, чтобы не сильно задерживать систему.
 
-{% highlight txt %}
+{% highlight text %}
 # file: config_mysql
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
