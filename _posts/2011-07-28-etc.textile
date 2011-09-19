@@ -47,7 +47,7 @@ h3(#phpmysqladmin-sshtunnel). phpmyadmin и ssh
 
 {% highlight text %}
 /path/to/socket:/path/to/pid:cmd
-/path/to/socket2/path/to/pid2:cmd
+/path/to/socket2:/path/to/pid2:cmd
 {% endhighlight %}
 
 Мой конфиг, приблизительно, таков:
