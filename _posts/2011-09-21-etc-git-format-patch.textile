@@ -1,8 +1,9 @@
 ---
 layout: posts
 date: 2011-09-21 21:00:43 +11:00
-title: Всякое: git format-patch && mutt
+title: git format-patch && mutt
 description: smtp git исправлений и сохранение их в mbox формате с помощью mutt
+tags: etc git-format-patch mutt
 ---
 
 Потребовалось с работы генерировать патчи для своих наработочек, делать @git push@ в сам репозитарий не всегда возможно, да и вообще, лениво, по этому решил разобраться с @git format-patch@ и @git am@.
