@@ -266,6 +266,8 @@ th code
 #post_body table
 {
 	padding: 0px;
+	display: block;
+	overflow: auto;
 }
 
 #post_body table th
