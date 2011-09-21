@@ -1,0 +1,54 @@
+---
+layout: posts
+date: 2011-09-21 21:04:48 +11:00
+title: Всякое: phpmyadmin && ssh
+description: Использование phpmyadmin как централизованного клиента к нескольким mysql-серверам.
+tags: etc phpmyadmin ssh
+---
+
+Неожиданно потребовалось странное - нормальный, привычный, клиент для mysql, который бы умел подключаться к UDS(Unix Domain Socket) через ssh-тунель, из всего подручного и умеющего оказался только mysql-workbench, но он жутко падучий, да и вообще, как-то хреново организован. В общем, не долго думая, остановился на phpmyadmin, но, т.к. он не умеет ssh-тунели, пришлось написать маленького даймона (искать альтернативы было лень).
+
+Репозиторий прислужника: "https://github.com/noktoborus/unetd":https://github.com/noktoborus/unetd , занимается тем, что создаёт unix-сокет и при обращениях к нему создаёт процесс, stdin и stdout которорго, привязаны к этому сокету. Прилагается init.d скрипт для openrc gentoo, который использует конфиг @/etc/unetd.conf@, формат которого указан ниже.
+
+{% highlight text %}
+/path/to/socket:/path/to/pid:cmd
+/path/to/socket2:/path/to/pid2:cmd
+{% endhighlight %}
+
+Мой конфиг, приблизительно, таков:
+
+{% highlight text %}
+/var/run/mysqld-svn0:/var/run/mysqld-svn0.pid:ssh -F /home/noktoborus/.ssh/config_mysql -i /home/noktoborus/.ssh/id_rsa.1 fix@svn0 nc -U /var/run/mysqld/mysqld.sock
+/var/run/mysqld-jabber:/var/run/mysqld-jabber.pid:ssh -F /home/noktoborus/.ssh/config_mysql -i /home/noktoborus/.ssh/id_rsa.1 fix@jabber nc -U /var/run/mysqld/mysqld.sock
+{% endhighlight %}
+
+В моём случае, ssh подключается (при надобности) к sshd, запускает netcat (обязательно netcat6, который умеет опцию -U (использовать UDS)) и обменивается по stdin/stdout трафиком. Ключ @/home/noktoborus/.ssh/id_rsa.1@ необходим для авторизации на sshd, и конфигурация @/home/noktoborus/.ssh/config_mysql@ содержит опции, чтобы не сильно задерживать систему.
+
+{% highlight text %}
+# file: config_mysql
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+ServerAliveInterval 1
+ConnectTimeout 3
+ExitOnForwardFailure yes
+{% endhighlight %}
+
+Теперь настраиваем наш phpmyadmin, добавив в @config.inc.php@ следующие строки
+
+{% highlight php %}
+$i++; # инкрементируем индекс сервера, как советует документация
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['connect_type'] = 'socket'; # тип подключения: unix socket
+$cfg['Servers'][$i]['socket'] = '/var/run/mysqld-svn0'; # путь к нашему сокету
+$cfg['Servers'][$i]['verbose'] = 'svn0'; # имя, которое будет отображаться в списке доступных серверов (и где-то ишо), необязательно
+
+$i++;
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['Servers'][$i]['connect_type'] = 'socket';
+$cfg['Servers'][$i]['socket'] = '/var/run/mysqld-jabber';
+$cfg['Servers'][$i]['verbose'] = 'jabber';
+{% endhighlight %}
+
+Теперь подключаемся к нашему phpmyadmin и делаем непотребные вещи. Так же, можно использовать локальный клиент mysql, к примеру: @mysql -S /var/run/mysqld-svn0@.
+
+

@@ -1,0 +1,31 @@
+---
+layout: posts
+date: 2011-09-21 21:06:54 +11:00
+title: Всякое: rfkill event
+description: Запуск init-скриптов в соотвествии с событиями rfkill
+tags: etc rfkill gentoo
+---
+
+Как оказалось, сигналы от rfkill (rfswitch?) не ловятся в acpi, и ваще нигде, вот. А хотелось бы, чтобы при подключении Bluetooth запускался bluez, при включении wifi-антенки запускался wpa_supplicant и выключалось это всё при отключении соответсвующих устройств. Думал не долго, в сети информации вообще не искал, но обнаружил аргумент event у утилиты rfkill и написал небольшой init.d-скрипт для gentoo: "https://gist.github.com/1228830":https://gist.github.com/1228830 . Скрипт запускается и висит демоном в фоне всё время, при включении устройства хардварно (вставить его в компьютер или снять хардварную блокировку с устройства) запускает скрипты из /etc/runlevels/rf-${sys}, где ${sys} содержит название подсистемы (hci для bluetooth, к примеру, или phy для wifi), список поддерживаемых подсистем можно подсмотреть в rfkill list.
+
+{% highlight text %}
+# rfkill list
+1: phy0: Wireless LAN
+        Soft blocked: no
+        Hard blocked: yes
+30: hci0: Bluetooth
+        Soft blocked: yes
+        Hard blocked: no
+{% endhighlight %}
+
+Из листинга выше видно что мой wifi соответсвует подсистеме phy (устройство phy0), а блютуз - hci.
+
+{% highlight text %}
+# mkdir /etc/runlevels/rf-phy /etc/runlevels/rf-hci
+# rc-update add wpa_supplicant rf-phy
+# rc-update add bluetooth rf-hci
+# rc-update add rfkill-event boot
+{% endhighlight %}
+
+Теперь у нас в уровнях запуска rf-phy и rf-hci лежат соотвествующие скрипты, так же, не забываем удалить ваши программы с других уровней запуска, к примеру с boot и default, иначе вся проведённая операция не будет иметь веса. Последняя строка @rc-update add rfkill-event boot@ добавит мой скрипт (который вы получили по ссылки выше с gist.github.com) в системную загрузку.
+
