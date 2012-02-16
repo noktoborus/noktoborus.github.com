@@ -144,6 +144,15 @@ body {
 	color: #a55c19;
 	padding-left: 14px;
 }
+
+#posts .post_line .end {
+	display: block;
+	text-align: center;
+	background-color: #302e2b;
+	color: #3a3b25;
+	height: 10px;
+}
+
 #posts .post_line a:active {
 	color: #ffce00;
 }
