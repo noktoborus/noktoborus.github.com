@@ -1,5 +1,5 @@
 body {
-	background: #232413;
+	background: #f5f8ff;
 	color: yellow;
 }
 #head, #body, #foot, #body_head, #body_body {
@@ -21,20 +21,20 @@ body {
 	display: block;
 	color: #aeb9cf;
 	font-size: 20px;
-	border: 1px solid #29291a;
+	/*border: 1px solid #29291a;*/
 	height: 33px;
 	position: relative;
 	top: -16px;
 }
 #head a:hover {
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 	border-top: 1px solid #29291a;
 }
 #foot a {
 	color: #2f435f;
 }
 #head {
-	background-color: #29291a;
+	background-color: #e6ebef;
 	height: 35px;
 }
 #head_text {
@@ -50,7 +50,7 @@ body {
 	padding-bottom: 10px;
 	padding-left: 5px;
 	padding-right: 5px;
-	background: #302e2b;
+	background: #efeee6;
 	border-bottom: 1px solid #1b160a;
 }	
 #body_head {
@@ -60,7 +60,7 @@ body {
 	width: 100%;
 	border-top-width: 0px;
 	border-bottom-width: 1px;
-	background-color: #363636;
+	background-color: #efece6;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	text-align: center;
@@ -74,7 +74,7 @@ body {
 }
 #body_body {
 	position: relative;
-	background-color: #363636;
+	background-color: #ffffff;
 	width: 100%;
 	border-bottom-width: 1px;
 }
@@ -134,13 +134,15 @@ body {
 }
 #posts .post_line a .title {
 	display: block;
-	color: #d69e26;
-	background: #000f17;
+	color: #a89227;
+	background: #fffff0;
 	padding-left: 7px;
+	font-size: 20px;
 }
 #posts .post_line a .descr {
 	display: block;
-	background: #001d2c;
+	font-size: 16px;
+	background: #d3dadc;
 	color: #a55c19;
 	padding-left: 14px;
 }
@@ -148,7 +150,8 @@ body {
 #posts .post_line .end {
 	display: block;
 	text-align: center;
-	background-color: #302e2b;
+	border-top: 1px solid grey;
+	background-color: #efeee6;
 	color: #3a3b25;
 	height: 10px;
 }
@@ -229,8 +232,8 @@ body {
 #post_body
 {
 	border-top: 1px solid #000;
-	color: #b7b7c6;
-	background: #090911;
+	color: #485250;
+	background: #efeee6;
 	padding-top: 1px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -247,7 +250,7 @@ p code, td code, ul code
 {
 	padding-left: 3px; 
 	padding-right: 3px;
-	background: #0d0d17;
+	background: #e1e0da;
 	color: #7c7c4b;
 }
 
@@ -290,7 +293,7 @@ th code
 
 #post_body table td
 {
-	background: #10101d;
+	background: #eefee0;
 	padding: 5px;
 	text-align: justify;
 	vertical-align: top;
