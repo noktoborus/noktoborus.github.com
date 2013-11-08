@@ -1,0 +1,6 @@
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+ServerAliveInterval 1
+ConnectTimeout 3
+LogLevel QUIET
+
