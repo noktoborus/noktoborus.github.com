@@ -45,7 +45,6 @@ h3(#solving). Выполнение
 {% endhighlight %}
 
 MongoDB запускаем с привычными ключами (адрес 127.0.5.2 у нас назначен для repl в файле /etc/hosts, для удобного доступа):
-
 @--replSet rs --port 27017 --bind_ip 127.0.5.2@ на server2
 @--replSet rs --port 27117 --bind_ip 127.0.5.2@ на server1
 
