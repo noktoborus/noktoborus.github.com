@@ -33,7 +33,7 @@ h3(#solving). Выполнение
 {% endhighlight %}
 
 Для ssh, в домашней директории пользователя repl создаём ключи (`ssh-keygen`), и конфигурацию .ssh/config с указанием не задавать вопросов при добавлении ключей в список known_hosts (@StrictHostKeyChecking@), использовать для known_hosts файл /dev/null (@UserKnownHostsFile@), почаще проверять наличие коннекта (@ServerAliveInterval@ и @ConnectTimeout@). @LogLevel@ в значении @QUIET@ нужен для того, что бы ssh не капала на stdout/stderr (они пробрасываются xinetd в сокет) и лишний мусор не отправлялся клиенту.
-{% highlight config %}
+{% highlight text %}
 {% include mongodance/ssh_conf %}
 {% endhighlight %}
 
